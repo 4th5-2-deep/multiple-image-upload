@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Clothes</h1>
+
+<a href="{% url 'clothes:new' %}">New</a>
+
+<ul>
+  {% for clothes in clothes_list %}
+  <li>
+    {{ clothes.category.name }}: 
+    <img src="{{ clothes.image.url }}" alt="{{ clothes.image.url }}" width="200">
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
